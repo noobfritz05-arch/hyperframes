@@ -1,0 +1,87 @@
+<template>
+  <style>
+#root{position:absolute;inset:0;font-family:"Nunito",sans-serif;color:#1F2A44;}
+#root .abs{position:absolute}
+#root .h{position:absolute;left:192px;top:104px;font-size:48px;font-weight:900;letter-spacing:-0.01em;display:flex;align-items:center;gap:20px}
+#root .step{display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;background:#1F2A44;color:#FFF7E8;border-radius:18px;font-size:38px}
+#root .t{font-size:42px;font-weight:800;line-height:1.25}
+#root .t2{font-size:34px;font-weight:700;line-height:1.3;color:#3C465C}
+#root .small{font-size:30px;font-weight:700;line-height:1.3;color:#3C465C}
+#root .c{text-align:center}
+#root .v{font-family:"EB Garamond",serif;font-style:italic;font-weight:600;font-size:1.12em;padding:0 0.03em}
+#root .math{font-weight:800;white-space:nowrap}
+#root .binom{display:inline-flex;align-items:center;vertical-align:middle}
+#root .binom .bp{font-size:2.05em;font-weight:300;line-height:1}
+#root .binom .bs{display:inline-flex;flex-direction:column;align-items:center;line-height:1.02;font-size:0.82em;margin:0 0.04em}
+#root .frac{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;margin:0 0.1em}
+#root .frac .num{padding:0 0.2em;line-height:1.15}
+#root .frac .den{border-top:0.07em solid currentColor;padding:0.05em 0.2em 0;line-height:1.15}
+#root .sqrt{display:inline-flex;align-items:flex-start;vertical-align:baseline}
+#root .sqrt .rs{font-weight:600}
+#root .sqrt .rc{border-top:0.07em solid currentColor;padding:0 0.12em;margin-top:0.12em;line-height:1.05}
+#root sup{font-size:0.6em;vertical-align:0.75em;line-height:0}
+#root .hit{color:#17804A}
+#root .miss{color:#C2362F}
+#root .acc{color:#2F5BD3}
+#root .pur{color:#7B3FC4}
+#root .card{background:#FFFFFF;border:4px solid #1F2A44;border-radius:28px;box-shadow:8px 8px 0 #1F2A44}
+#root .mark{background:linear-gradient(transparent 58%, #FFD54A 58%);padding:0 0.08em}
+#root .badge{display:inline-flex;align-items:center;justify-content:center;width:1.5em;height:1.5em;border-radius:50%;border:4px solid #1F2A44;font-weight:900;color:#FFFFFF;line-height:1}
+#root .hitb{background:#17804A}
+#root .missb{background:#C2362F}
+#root .chart{position:absolute;width:820px;height:600px}
+#root .chart .base{position:absolute;left:60px;right:20px;bottom:120px;height:5px;background:#1F2A44;border-radius:3px}
+#root .chart .bar{position:absolute;bottom:122px;width:110px;background:#1F2A44;border-radius:14px 14px 0 0}
+#root .chart .bar.k2{background:#2F5BD3}
+#root .chart .val{position:absolute;width:180px;text-align:center;font-size:32px;font-weight:900}
+#root .chart .kl{position:absolute;bottom:62px;width:180px;text-align:center;font-size:38px;font-weight:900}
+#root .chart .ax{position:absolute;bottom:4px;left:80px;width:720px;text-align:center;font-size:28px;font-weight:700;color:#3C465C}
+#root .chart .ay{position:absolute;top:0;left:60px;font-size:30px;font-weight:800;color:#3C465C}
+
+  </style>
+  <div id="root" data-composition-id="rechnen" data-width="1920" data-height="1080">
+    <div id="rechnen-wrap" class="abs" style="inset: 0">
+      <div id="rechnen-h" class="h"><span class="step">5</span><span>„<span class="v">n</span> über <span class="v">k</span>“ ausrechnen</span></div>
+      <div id="re-f" class="abs math c" style="left:192px;top:220px;width:1536px;font-size:80px"><span class="binom"><span class="bp">(</span><span class="bs"><span><span class="v">n</span></span><span><span class="v">k</span></span></span><span class="bp">)</span></span> = <span class="frac"><span class="num"><span class="v">n</span>!</span><span class="den"><span class="v">k</span>! · (<span class="v">n</span> − <span class="v">k</span>)!</span></span></div>
+      <div id="re-n1" class="abs t" style="left:192px;top:440px">Das Ausrufezeichen heißt <span class="mark">Fakultät</span>: <span class="v">n</span>! = 1 · 2 · 3 · … · <span class="v">n</span></div>
+      <div id="re-n2" class="abs t2" style="left:192px;top:520px">Beispiele: 3! = 1 · 2 · 3 = 6 &nbsp;&nbsp; 2! = 1 · 2 = 2 &nbsp;&nbsp; 1! = 1</div>
+      <div id="re-c" class="abs math" style="left:192px;top:650px;font-size:68px">Bei uns: <span class="binom"><span class="bp">(</span><span class="bs"><span>3</span><span>2</span></span><span class="bp">)</span></span> = <span id="re-c1"><span class="frac"><span class="num">3!</span><span class="den">2! · 1!</span></span></span> <span id="re-c2">= <span class="frac"><span class="num">6</span><span class="den">2 · 1</span></span></span> <span id="re-c3">= 3</span></div>
+      <div id="re-ok" class="abs t hit" style="left:192px;top:850px">✓ genau die 3 Wege von vorhin!</div>
+      <div id="re-e0" class="abs t2" style="left:192px;top:240px">Jetzt alles einsetzen: <span class="v">n</span> = 3, <span class="v">k</span> = 2, <span class="v">p</span> = 0,4</div>
+      <div id="re-e1" class="abs math" style="left:192px;top:340px;font-size:72px">P(<span class="v">X</span> = 2) = <span class="binom"><span class="bp">(</span><span class="bs"><span>3</span><span>2</span></span><span class="bp">)</span></span> · 0,4<sup>2</sup> · 0,6<sup>1</sup></div>
+      <div id="re-e2" class="abs math" style="left:192px;top:520px;font-size:72px">= 3 · 0,16 · 0,6</div>
+      <div id="re-e3" class="abs math" style="left:192px;top:640px;font-size:72px">= <span class="mark">0,288 ≈ 28,8 %</span></div>
+      <div id="re-e4" class="abs t2" style="left:192px;top:780px">Gleiches Ergebnis wie mit den Wegen – nur viel schneller.</div>
+    </div>
+  </div>
+  <script>
+      const tl = gsap.timeline({ paused: true });
+      const blurIn = (sel, t, d = 0.45) =>
+        tl.fromTo(sel, { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: d, ease: "power3.out" }, t);
+      const rise = (sel, t, stagger = 0) =>
+        tl.fromTo(sel, { opacity: 0, y: 34, filter: "blur(6px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.6, ease: "expo.out", stagger }, t);
+      const pop = (sel, t, stagger = 0) =>
+        tl.fromTo(sel, { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.55, ease: "back.out(1.7)", stagger }, t);
+      const slideIn = (sel, t) =>
+        tl.fromTo(sel, { opacity: 0, x: -70, filter: "blur(8px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.65, ease: "expo.out" }, t);
+      const out = (sel, t) => tl.to(sel, { opacity: 0, filter: "blur(10px)", duration: 0.3, ease: "power2.in" }, t);
+      const glow = (sel, t, color) => tl.to(sel, { backgroundColor: color, duration: 0.35, ease: "power2.out" }, t);
+      slideIn("#rechnen-h", 0.2);
+      blurIn("#re-f", 0.8, 0.6);
+      rise("#re-n1", 2.6);
+      rise("#re-n2", 4.6);
+      tl.fromTo("#re-c", { opacity: 0 }, { opacity: 1, duration: 0.01 }, 7.6);
+      tl.fromTo(["#re-c1", "#re-c2", "#re-c3"], { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.4, stagger: 1.3, ease: "power3.out" }, 8.4);
+      tl.fromTo("#re-c", { filter: "blur(8px)" }, { filter: "blur(0px)", duration: 0.4, ease: "power3.out" }, 7.6);
+      pop("#re-ok", 11.4);
+      out(["#re-f", "#re-n1", "#re-n2", "#re-c", "#re-ok"], 14.0);
+      blurIn("#re-e0", 14.4);
+      rise("#re-e1", 15.4);
+      rise("#re-e2", 17.0);
+      rise("#re-e3", 18.3);
+      blurIn("#re-e4", 19.4);
+      out("#rechnen-wrap", 22.65);
+      tl.set({}, {}, 23);
+      window.__timelines["rechnen"] = tl;
+  </script>
+</template>

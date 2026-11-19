@@ -1,0 +1,98 @@
+<template>
+  <style>
+#root{position:absolute;inset:0;font-family:"Nunito",sans-serif;color:#1F2A44;}
+#root .abs{position:absolute}
+#root .h{position:absolute;left:192px;top:104px;font-size:48px;font-weight:900;letter-spacing:-0.01em;display:flex;align-items:center;gap:20px}
+#root .step{display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;background:#1F2A44;color:#FFF7E8;border-radius:18px;font-size:38px}
+#root .t{font-size:42px;font-weight:800;line-height:1.25}
+#root .t2{font-size:34px;font-weight:700;line-height:1.3;color:#3C465C}
+#root .small{font-size:30px;font-weight:700;line-height:1.3;color:#3C465C}
+#root .c{text-align:center}
+#root .v{font-family:"EB Garamond",serif;font-style:italic;font-weight:600;font-size:1.12em;padding:0 0.03em}
+#root .math{font-weight:800;white-space:nowrap}
+#root .binom{display:inline-flex;align-items:center;vertical-align:middle}
+#root .binom .bp{font-size:2.05em;font-weight:300;line-height:1}
+#root .binom .bs{display:inline-flex;flex-direction:column;align-items:center;line-height:1.02;font-size:0.82em;margin:0 0.04em}
+#root .frac{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;margin:0 0.1em}
+#root .frac .num{padding:0 0.2em;line-height:1.15}
+#root .frac .den{border-top:0.07em solid currentColor;padding:0.05em 0.2em 0;line-height:1.15}
+#root .sqrt{display:inline-flex;align-items:flex-start;vertical-align:baseline}
+#root .sqrt .rs{font-weight:600}
+#root .sqrt .rc{border-top:0.07em solid currentColor;padding:0 0.12em;margin-top:0.12em;line-height:1.05}
+#root sup{font-size:0.6em;vertical-align:0.75em;line-height:0}
+#root .hit{color:#17804A}
+#root .miss{color:#C2362F}
+#root .acc{color:#2F5BD3}
+#root .pur{color:#7B3FC4}
+#root .card{background:#FFFFFF;border:4px solid #1F2A44;border-radius:28px;box-shadow:8px 8px 0 #1F2A44}
+#root .mark{background:linear-gradient(transparent 58%, #FFD54A 58%);padding:0 0.08em}
+#root .badge{display:inline-flex;align-items:center;justify-content:center;width:1.5em;height:1.5em;border-radius:50%;border:4px solid #1F2A44;font-weight:900;color:#FFFFFF;line-height:1}
+#root .hitb{background:#17804A}
+#root .missb{background:#C2362F}
+#root .chart{position:absolute;width:820px;height:600px}
+#root .chart .base{position:absolute;left:60px;right:20px;bottom:120px;height:5px;background:#1F2A44;border-radius:3px}
+#root .chart .bar{position:absolute;bottom:122px;width:110px;background:#1F2A44;border-radius:14px 14px 0 0}
+#root .chart .bar.k2{background:#2F5BD3}
+#root .chart .val{position:absolute;width:180px;text-align:center;font-size:32px;font-weight:900}
+#root .chart .kl{position:absolute;bottom:62px;width:180px;text-align:center;font-size:38px;font-weight:900}
+#root .chart .ax{position:absolute;bottom:4px;left:80px;width:720px;text-align:center;font-size:28px;font-weight:700;color:#3C465C}
+#root .chart .ay{position:absolute;top:0;left:60px;font-size:30px;font-weight:800;color:#3C465C}
+
+  </style>
+  <div id="root" data-composition-id="wurf" data-width="1920" data-height="1080">
+    <div id="wurf-wrap" class="abs" style="inset: 0">
+      <div id="wurf-h" class="h"><span class="step">1</span><span>Ein einzelner Wurf</span></div>
+      <div id="wurf-c1" class="abs card c" style="left:300px;top:230px;width:580px;padding:26px 20px">
+        <div style="font-size:64px"><span class="badge hitb">✓</span></div>
+        <div class="t hit" style="margin-top:10px">Treffer</div>
+        <div class="math" style="font-size:60px;margin-top:6px"><span class="v">p</span> = 0,4 <span class="t2">(40 %)</span></div>
+      </div>
+      <div id="wurf-c2" class="abs card c" style="left:1040px;top:230px;width:580px;padding:26px 20px">
+        <div style="font-size:64px"><span class="badge missb">✗</span></div>
+        <div class="t miss" style="margin-top:10px">Daneben</div>
+        <div class="math" style="font-size:60px;margin-top:6px">1 − <span class="v">p</span> = 0,6 <span class="t2">(60 %)</span></div>
+      </div>
+      <div id="wurf-n1" class="abs small c" style="left:300px;top:590px;width:580px"><span class="v">p</span> = Wahrscheinlichkeit für einen Treffer<br />(<span class="v">p</span> wie englisch „probability“)</div>
+      <div id="wurf-n2" class="abs small c" style="left:1040px;top:590px;width:580px">1 − <span class="v">p</span> = Gegenwahrscheinlichkeit:<br />die Chance, dass es <b>kein</b> Treffer wird</div>
+      <div id="wurf-bar" class="abs" style="left:300px;top:740px;width:1320px;height:76px;display:flex;border:4px solid #1F2A44;border-radius:20px;overflow:hidden">
+        <div class="t c" style="width:40%;background:#17804A;color:#FFFFFF;line-height:68px">0,4</div>
+        <div class="t c" style="width:60%;background:#C2362F;color:#FFFFFF;line-height:68px">0,6</div>
+      </div>
+      <div id="wurf-sum" class="abs t c" style="left:300px;top:840px;width:1320px">zusammen: 0,4 + 0,6 = 1 = 100 %</div>
+      <div id="wurf-lead" class="abs t c" style="left:192px;top:250px;width:1536px">Damit die Binomialverteilung passt, braucht man:</div>
+      <div id="wurf-r1" class="abs card t" style="left:460px;top:360px;width:1000px;padding:18px 32px">① Nur zwei Ausgänge: Treffer oder daneben</div>
+      <div id="wurf-r2" class="abs card t" style="left:460px;top:480px;width:1000px;padding:18px 32px">② <span class="v">p</span> bleibt bei jedem Wurf gleich</div>
+      <div id="wurf-r3" class="abs card t" style="left:460px;top:600px;width:1000px;padding:18px 32px">③ Die Würfe beeinflussen sich nicht</div>
+      <div id="wurf-name" class="abs t c" style="left:192px;top:790px;width:1536px">So ein Versuch heißt <span class="mark">Bernoulli-Versuch</span>.</div>
+    </div>
+  </div>
+  <script>
+      const tl = gsap.timeline({ paused: true });
+      const blurIn = (sel, t, d = 0.45) =>
+        tl.fromTo(sel, { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: d, ease: "power3.out" }, t);
+      const rise = (sel, t, stagger = 0) =>
+        tl.fromTo(sel, { opacity: 0, y: 34, filter: "blur(6px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.6, ease: "expo.out", stagger }, t);
+      const pop = (sel, t, stagger = 0) =>
+        tl.fromTo(sel, { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.55, ease: "back.out(1.7)", stagger }, t);
+      const slideIn = (sel, t) =>
+        tl.fromTo(sel, { opacity: 0, x: -70, filter: "blur(8px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.65, ease: "expo.out" }, t);
+      const out = (sel, t) => tl.to(sel, { opacity: 0, filter: "blur(10px)", duration: 0.3, ease: "power2.in" }, t);
+      const glow = (sel, t, color) => tl.to(sel, { backgroundColor: color, duration: 0.35, ease: "power2.out" }, t);
+      slideIn("#wurf-h", 0.2);
+      pop("#wurf-c1", 0.9);
+      pop("#wurf-c2", 1.5);
+      blurIn("#wurf-n1", 2.8);
+      blurIn("#wurf-n2", 5.0);
+      tl.fromTo("#wurf-bar", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.7, ease: "expo.out", transformOrigin: "0% 50%" }, 7.3);
+      rise("#wurf-sum", 7.9);
+      out(["#wurf-c1", "#wurf-c2", "#wurf-n1", "#wurf-n2", "#wurf-bar", "#wurf-sum"], 10.6);
+      blurIn("#wurf-lead", 11.0);
+      rise("#wurf-r1", 11.8);
+      rise("#wurf-r2", 13.2);
+      rise("#wurf-r3", 14.6);
+      blurIn("#wurf-name", 16.4);
+      out("#wurf-wrap", 19.65);
+      tl.set({}, {}, 20);
+      window.__timelines["wurf"] = tl;
+  </script>
+</template>

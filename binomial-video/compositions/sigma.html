@@ -1,0 +1,107 @@
+<template>
+  <style>
+#root{position:absolute;inset:0;font-family:"Nunito",sans-serif;color:#1F2A44;}
+#root .abs{position:absolute}
+#root .h{position:absolute;left:192px;top:104px;font-size:48px;font-weight:900;letter-spacing:-0.01em;display:flex;align-items:center;gap:20px}
+#root .step{display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;background:#1F2A44;color:#FFF7E8;border-radius:18px;font-size:38px}
+#root .t{font-size:42px;font-weight:800;line-height:1.25}
+#root .t2{font-size:34px;font-weight:700;line-height:1.3;color:#3C465C}
+#root .small{font-size:30px;font-weight:700;line-height:1.3;color:#3C465C}
+#root .c{text-align:center}
+#root .v{font-family:"EB Garamond",serif;font-style:italic;font-weight:600;font-size:1.12em;padding:0 0.03em}
+#root .math{font-weight:800;white-space:nowrap}
+#root .binom{display:inline-flex;align-items:center;vertical-align:middle}
+#root .binom .bp{font-size:2.05em;font-weight:300;line-height:1}
+#root .binom .bs{display:inline-flex;flex-direction:column;align-items:center;line-height:1.02;font-size:0.82em;margin:0 0.04em}
+#root .frac{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;margin:0 0.1em}
+#root .frac .num{padding:0 0.2em;line-height:1.15}
+#root .frac .den{border-top:0.07em solid currentColor;padding:0.05em 0.2em 0;line-height:1.15}
+#root .sqrt{display:inline-flex;align-items:flex-start;vertical-align:baseline}
+#root .sqrt .rs{font-weight:600}
+#root .sqrt .rc{border-top:0.07em solid currentColor;padding:0 0.12em;margin-top:0.12em;line-height:1.05}
+#root sup{font-size:0.6em;vertical-align:0.75em;line-height:0}
+#root .hit{color:#17804A}
+#root .miss{color:#C2362F}
+#root .acc{color:#2F5BD3}
+#root .pur{color:#7B3FC4}
+#root .card{background:#FFFFFF;border:4px solid #1F2A44;border-radius:28px;box-shadow:8px 8px 0 #1F2A44}
+#root .mark{background:linear-gradient(transparent 58%, #FFD54A 58%);padding:0 0.08em}
+#root .badge{display:inline-flex;align-items:center;justify-content:center;width:1.5em;height:1.5em;border-radius:50%;border:4px solid #1F2A44;font-weight:900;color:#FFFFFF;line-height:1}
+#root .hitb{background:#17804A}
+#root .missb{background:#C2362F}
+#root .chart{position:absolute;width:820px;height:600px}
+#root .chart .base{position:absolute;left:60px;right:20px;bottom:120px;height:5px;background:#1F2A44;border-radius:3px}
+#root .chart .bar{position:absolute;bottom:122px;width:110px;background:#1F2A44;border-radius:14px 14px 0 0}
+#root .chart .bar.k2{background:#2F5BD3}
+#root .chart .val{position:absolute;width:180px;text-align:center;font-size:32px;font-weight:900}
+#root .chart .kl{position:absolute;bottom:62px;width:180px;text-align:center;font-size:38px;font-weight:900}
+#root .chart .ax{position:absolute;bottom:4px;left:80px;width:720px;text-align:center;font-size:28px;font-weight:700;color:#3C465C}
+#root .chart .ay{position:absolute;top:0;left:60px;font-size:30px;font-weight:800;color:#3C465C}
+
+  </style>
+  <div id="root" data-composition-id="sigma" data-width="1920" data-height="1080">
+    <div id="sigma-wrap" class="abs" style="inset: 0">
+      <div id="sigma-h" class="h"><span class="step">9</span><span>Die Standardabweichung</span></div>
+      <div id="sg-a" class="abs t2" style="left:192px;top:210px;width:1536px">Die Varianz hat die Einheit „Treffer²“ – das kann man sich schlecht vorstellen.</div>
+      <div id="sg-b" class="abs t" style="left:192px;top:290px">Deshalb ziehen wir die <span class="mark">Wurzel</span>:</div>
+      <div id="sg-f" class="abs math" style="left:192px;top:400px;font-size:76px"><span class="v">σ</span> = <span class="sqrt"><span class="rs">√</span><span class="rc">V(<span class="v">X</span>)</span></span> = <span class="sqrt"><span class="rs">√</span><span class="rc"><span class="v">n</span> · <span class="v">p</span> · (1 − <span class="v">p</span>)</span></span></div>
+      <div id="sg-g" class="abs math" style="left:192px;top:530px;font-size:76px">= <span class="sqrt"><span class="rs">√</span><span class="rc">0,72</span></span> ≈ <span class="mark">0,85</span> Treffer</div>
+      <div id="sg-h" class="abs t" style="left:192px;top:690px;width:1400px"><span class="v">σ</span> (sprich „Sigma“) heißt <b class="pur">Standardabweichung</b>: die typische Abweichung vom Erwartungswert.</div>
+      <div id="sg-band" class="abs" style="left:425px;top:310px;width:306px;height:478px;background:#7B3FC422;border-left:5px dashed #7B3FC4;border-right:5px dashed #7B3FC4"></div>
+      <div id="sg-chart" class="chart" style="left:192px;top:250px">
+          <div class="ay">P(<span class="v">X</span> = <span class="v">k</span>)</div>
+          <div id="sg-bar0" class="bar" style="left:115px;height:173px"></div>
+          <div id="sg-val0" class="val" style="left:80px;bottom:305px">21,6 %</div>
+          <div class="kl" style="left:80px">0</div>
+          <div id="sg-bar1" class="bar" style="left:295px;height:346px"></div>
+          <div id="sg-val1" class="val" style="left:260px;bottom:478px">43,2 %</div>
+          <div class="kl" style="left:260px">1</div>
+          <div id="sg-bar2" class="bar k2" style="left:475px;height:230px"></div>
+          <div id="sg-val2" class="val acc" style="left:440px;bottom:362px">28,8 %</div>
+          <div class="kl" style="left:440px">2</div>
+          <div id="sg-bar3" class="bar" style="left:655px;height:51px"></div>
+          <div id="sg-val3" class="val" style="left:620px;bottom:183px">6,4 %</div>
+          <div class="kl" style="left:620px">3</div>
+          <div class="base"></div>
+          <div class="ax"><span class="v">k</span> = Anzahl Treffer</div>
+        </div>
+      <div id="sg-mu" class="abs" style="left:575px;top:380px;width:6px;height:410px;background:#FFB800"></div>
+      <div id="sg-mul" class="abs math" style="left:602px;top:386px;font-size:36px"><span class="v">μ</span> = 1,2</div>
+      <div id="sg-bl" class="abs small c pur" style="left:278px;top:880px;width:600px"><b><span class="v">μ</span> − <span class="v">σ</span> ≈ 0,35 &nbsp; bis &nbsp; <span class="v">μ</span> + <span class="v">σ</span> ≈ 2,05</b></div>
+      <div id="sg-r1" class="abs t" style="left:1090px;top:330px;width:640px">Im Bereich <span class="v">μ</span> ± <span class="v">σ</span> liegen 1 und 2 Treffer.</div>
+      <div id="sg-r2" class="abs t2" style="left:1090px;top:480px;width:640px">Zusammen: 43,2 % + 28,8 % = <span class="mark">72 %</span></div>
+      <div id="sg-r3" class="abs t2" style="left:1090px;top:600px;width:640px">Meistens trifft Mia also 1- oder 2-mal. Je größer <span class="v">σ</span>, desto stärker streuen die Ergebnisse.</div>
+    </div>
+  </div>
+  <script>
+      const tl = gsap.timeline({ paused: true });
+      const blurIn = (sel, t, d = 0.45) =>
+        tl.fromTo(sel, { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: d, ease: "power3.out" }, t);
+      const rise = (sel, t, stagger = 0) =>
+        tl.fromTo(sel, { opacity: 0, y: 34, filter: "blur(6px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.6, ease: "expo.out", stagger }, t);
+      const pop = (sel, t, stagger = 0) =>
+        tl.fromTo(sel, { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.55, ease: "back.out(1.7)", stagger }, t);
+      const slideIn = (sel, t) =>
+        tl.fromTo(sel, { opacity: 0, x: -70, filter: "blur(8px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.65, ease: "expo.out" }, t);
+      const out = (sel, t) => tl.to(sel, { opacity: 0, filter: "blur(10px)", duration: 0.3, ease: "power2.in" }, t);
+      const glow = (sel, t, color) => tl.to(sel, { backgroundColor: color, duration: 0.35, ease: "power2.out" }, t);
+      slideIn("#sigma-h", 0.2);
+      blurIn("#sg-a", 0.8);
+      rise("#sg-b", 3.0);
+      blurIn("#sg-f", 4.2, 0.6);
+      rise("#sg-g", 6.0);
+      blurIn("#sg-h", 8.4);
+      out(["#sg-a", "#sg-b", "#sg-f", "#sg-g", "#sg-h"], 11.6);
+      blurIn("#sg-chart", 12.0, 0.5);
+      tl.fromTo("#sg-mu", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out", transformOrigin: "50% 100%" }, 12.8);
+      pop("#sg-mul", 13.0);
+      tl.fromTo("#sg-band", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.8, ease: "expo.out" }, 14.0);
+      blurIn("#sg-bl", 14.4);
+      rise("#sg-r1", 15.4);
+      rise("#sg-r2", 17.2);
+      blurIn("#sg-r3", 18.8);
+      out("#sigma-wrap", 22.65);
+      tl.set({}, {}, 23);
+      window.__timelines["sigma"] = tl;
+  </script>
+</template>

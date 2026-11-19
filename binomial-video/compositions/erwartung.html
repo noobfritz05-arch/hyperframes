@@ -1,0 +1,117 @@
+<template>
+  <style>
+#root{position:absolute;inset:0;font-family:"Nunito",sans-serif;color:#1F2A44;}
+#root .abs{position:absolute}
+#root .h{position:absolute;left:192px;top:104px;font-size:48px;font-weight:900;letter-spacing:-0.01em;display:flex;align-items:center;gap:20px}
+#root .step{display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;background:#1F2A44;color:#FFF7E8;border-radius:18px;font-size:38px}
+#root .t{font-size:42px;font-weight:800;line-height:1.25}
+#root .t2{font-size:34px;font-weight:700;line-height:1.3;color:#3C465C}
+#root .small{font-size:30px;font-weight:700;line-height:1.3;color:#3C465C}
+#root .c{text-align:center}
+#root .v{font-family:"EB Garamond",serif;font-style:italic;font-weight:600;font-size:1.12em;padding:0 0.03em}
+#root .math{font-weight:800;white-space:nowrap}
+#root .binom{display:inline-flex;align-items:center;vertical-align:middle}
+#root .binom .bp{font-size:2.05em;font-weight:300;line-height:1}
+#root .binom .bs{display:inline-flex;flex-direction:column;align-items:center;line-height:1.02;font-size:0.82em;margin:0 0.04em}
+#root .frac{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;margin:0 0.1em}
+#root .frac .num{padding:0 0.2em;line-height:1.15}
+#root .frac .den{border-top:0.07em solid currentColor;padding:0.05em 0.2em 0;line-height:1.15}
+#root .sqrt{display:inline-flex;align-items:flex-start;vertical-align:baseline}
+#root .sqrt .rs{font-weight:600}
+#root .sqrt .rc{border-top:0.07em solid currentColor;padding:0 0.12em;margin-top:0.12em;line-height:1.05}
+#root sup{font-size:0.6em;vertical-align:0.75em;line-height:0}
+#root .hit{color:#17804A}
+#root .miss{color:#C2362F}
+#root .acc{color:#2F5BD3}
+#root .pur{color:#7B3FC4}
+#root .card{background:#FFFFFF;border:4px solid #1F2A44;border-radius:28px;box-shadow:8px 8px 0 #1F2A44}
+#root .mark{background:linear-gradient(transparent 58%, #FFD54A 58%);padding:0 0.08em}
+#root .badge{display:inline-flex;align-items:center;justify-content:center;width:1.5em;height:1.5em;border-radius:50%;border:4px solid #1F2A44;font-weight:900;color:#FFFFFF;line-height:1}
+#root .hitb{background:#17804A}
+#root .missb{background:#C2362F}
+#root .chart{position:absolute;width:820px;height:600px}
+#root .chart .base{position:absolute;left:60px;right:20px;bottom:120px;height:5px;background:#1F2A44;border-radius:3px}
+#root .chart .bar{position:absolute;bottom:122px;width:110px;background:#1F2A44;border-radius:14px 14px 0 0}
+#root .chart .bar.k2{background:#2F5BD3}
+#root .chart .val{position:absolute;width:180px;text-align:center;font-size:32px;font-weight:900}
+#root .chart .kl{position:absolute;bottom:62px;width:180px;text-align:center;font-size:38px;font-weight:900}
+#root .chart .ax{position:absolute;bottom:4px;left:80px;width:720px;text-align:center;font-size:28px;font-weight:700;color:#3C465C}
+#root .chart .ay{position:absolute;top:0;left:60px;font-size:30px;font-weight:800;color:#3C465C}
+
+  </style>
+  <div id="root" data-composition-id="erwartung" data-width="1920" data-height="1080">
+    <div id="erwartung-wrap" class="abs" style="inset: 0">
+      <div id="erwartung-h" class="h"><span class="step">7</span><span>Der Erwartungswert</span></div>
+      <div id="ew-q" class="abs t" style="left:192px;top:200px;width:1536px">Wie viele Treffer hat Mia <span class="mark">im Durchschnitt</span>, wenn sie sehr oft spielt?</div>
+      <div id="ew-chart" class="chart" style="left:192px;top:300px">
+          <div class="ay">P(<span class="v">X</span> = <span class="v">k</span>)</div>
+          <div id="ew-bar0" class="bar" style="left:115px;height:173px"></div>
+          <div id="ew-val0" class="val" style="left:80px;bottom:305px">21,6 %</div>
+          <div class="kl" style="left:80px">0</div>
+          <div id="ew-bar1" class="bar" style="left:295px;height:346px"></div>
+          <div id="ew-val1" class="val" style="left:260px;bottom:478px">43,2 %</div>
+          <div class="kl" style="left:260px">1</div>
+          <div id="ew-bar2" class="bar k2" style="left:475px;height:230px"></div>
+          <div id="ew-val2" class="val acc" style="left:440px;bottom:362px">28,8 %</div>
+          <div class="kl" style="left:440px">2</div>
+          <div id="ew-bar3" class="bar" style="left:655px;height:51px"></div>
+          <div id="ew-val3" class="val" style="left:620px;bottom:183px">6,4 %</div>
+          <div class="kl" style="left:620px">3</div>
+          <div class="base"></div>
+          <div class="ax"><span class="v">k</span> = Anzahl Treffer</div>
+        </div>
+      <div id="ew-tri" class="abs c" style="left:518px;top:782px;width:120px;line-height:0">
+        <svg width="44" height="40" viewBox="0 0 70 56"><path d="M35 4 L66 52 L4 52 Z" fill="#FFD54A" stroke="#1F2A44" stroke-width="6" stroke-linejoin="round" /></svg>
+      </div>
+      <div id="ew-mu" class="abs math" style="left:488px;top:906px;width:180px;text-align:center;font-size:36px"><span class="v">μ</span> = 1,2</div>
+      <div id="ew-a" class="abs t2" style="left:1090px;top:330px;width:640px">Jede Trefferzahl mal ihre Wahrscheinlichkeit, dann alles addieren:</div>
+      <div id="ew-s0" class="abs math" style="left:1090px;top:460px;font-size:46px">E(<span class="v">X</span>) = 0 · 0,216</div>
+      <div id="ew-s1" class="abs math" style="left:1236px;top:530px;font-size:46px">+ 1 · 0,432</div>
+      <div id="ew-s2" class="abs math" style="left:1236px;top:600px;font-size:46px">+ 2 · 0,288</div>
+      <div id="ew-s3" class="abs math" style="left:1236px;top:670px;font-size:46px">+ 3 · 0,064</div>
+      <div id="ew-s4" class="abs math" style="left:1236px;top:750px;font-size:60px">= <span class="mark">1,2</span></div>
+      <div id="ew-bal" class="abs small" style="left:1090px;top:850px;width:640px">Bei 1,2 wäre die Verteilung im Gleichgewicht.</div>
+      <div id="ew-k" class="abs card" style="left:1090px;top:320px;width:640px;padding:22px 28px">
+        <div class="t2">Abkürzung:</div>
+        <div class="math" style="font-size:54px;margin-top:4px">E(<span class="v">X</span>) = <span class="v">μ</span> = <span class="v">n</span> · <span class="v">p</span></div>
+        <div class="math" style="font-size:54px">= 3 · 0,4 = <span class="mark">1,2</span></div>
+      </div>
+      <div id="ew-l" class="abs small" style="left:1090px;top:600px;width:640px">E steht für Erwartungswert, <span class="v">μ</span> (sprich „mü“) ist sein Zeichen.</div>
+      <div id="ew-m" class="abs small" style="left:1090px;top:700px;width:640px">Logisch: 3 Würfe mal 40 % Trefferquote = 1,2</div>
+      <div id="ew-n" class="abs small" style="left:1090px;top:790px;width:640px"><b>Achtung:</b> 1,2 Treffer kann man nicht werfen. Es ist der Durchschnitt über viele Runden.</div>
+    </div>
+  </div>
+  <script>
+      const tl = gsap.timeline({ paused: true });
+      const blurIn = (sel, t, d = 0.45) =>
+        tl.fromTo(sel, { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: d, ease: "power3.out" }, t);
+      const rise = (sel, t, stagger = 0) =>
+        tl.fromTo(sel, { opacity: 0, y: 34, filter: "blur(6px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.6, ease: "expo.out", stagger }, t);
+      const pop = (sel, t, stagger = 0) =>
+        tl.fromTo(sel, { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.55, ease: "back.out(1.7)", stagger }, t);
+      const slideIn = (sel, t) =>
+        tl.fromTo(sel, { opacity: 0, x: -70, filter: "blur(8px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.65, ease: "expo.out" }, t);
+      const out = (sel, t) => tl.to(sel, { opacity: 0, filter: "blur(10px)", duration: 0.3, ease: "power2.in" }, t);
+      const glow = (sel, t, color) => tl.to(sel, { backgroundColor: color, duration: 0.35, ease: "power2.out" }, t);
+      slideIn("#erwartung-h", 0.2);
+      blurIn("#ew-q", 0.8);
+      blurIn("#ew-chart", 2.4, 0.5);
+      blurIn("#ew-a", 3.6);
+      rise("#ew-s0", 5.4);
+      rise("#ew-s1", 6.0);
+      rise("#ew-s2", 6.6);
+      rise("#ew-s3", 7.2);
+      pop("#ew-s4", 8.4);
+      tl.fromTo("#ew-tri", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.6, ease: "back.out(1.6)" }, 9.6);
+      pop("#ew-mu", 10.0);
+      blurIn("#ew-bal", 10.4);
+      out(["#ew-a", "#ew-s0", "#ew-s1", "#ew-s2", "#ew-s3", "#ew-s4", "#ew-bal"], 13.4);
+      pop("#ew-k", 13.8);
+      blurIn("#ew-l", 16.0);
+      blurIn("#ew-m", 18.4);
+      blurIn("#ew-n", 20.8);
+      out("#erwartung-wrap", 26.65);
+      tl.set({}, {}, 27);
+      window.__timelines["erwartung"] = tl;
+  </script>
+</template>

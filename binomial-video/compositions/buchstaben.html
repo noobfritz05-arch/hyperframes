@@ -1,0 +1,93 @@
+<template>
+  <style>
+#root{position:absolute;inset:0;font-family:"Nunito",sans-serif;color:#1F2A44;}
+#root .abs{position:absolute}
+#root .h{position:absolute;left:192px;top:104px;font-size:48px;font-weight:900;letter-spacing:-0.01em;display:flex;align-items:center;gap:20px}
+#root .step{display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;background:#1F2A44;color:#FFF7E8;border-radius:18px;font-size:38px}
+#root .t{font-size:42px;font-weight:800;line-height:1.25}
+#root .t2{font-size:34px;font-weight:700;line-height:1.3;color:#3C465C}
+#root .small{font-size:30px;font-weight:700;line-height:1.3;color:#3C465C}
+#root .c{text-align:center}
+#root .v{font-family:"EB Garamond",serif;font-style:italic;font-weight:600;font-size:1.12em;padding:0 0.03em}
+#root .math{font-weight:800;white-space:nowrap}
+#root .binom{display:inline-flex;align-items:center;vertical-align:middle}
+#root .binom .bp{font-size:2.05em;font-weight:300;line-height:1}
+#root .binom .bs{display:inline-flex;flex-direction:column;align-items:center;line-height:1.02;font-size:0.82em;margin:0 0.04em}
+#root .frac{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;margin:0 0.1em}
+#root .frac .num{padding:0 0.2em;line-height:1.15}
+#root .frac .den{border-top:0.07em solid currentColor;padding:0.05em 0.2em 0;line-height:1.15}
+#root .sqrt{display:inline-flex;align-items:flex-start;vertical-align:baseline}
+#root .sqrt .rs{font-weight:600}
+#root .sqrt .rc{border-top:0.07em solid currentColor;padding:0 0.12em;margin-top:0.12em;line-height:1.05}
+#root sup{font-size:0.6em;vertical-align:0.75em;line-height:0}
+#root .hit{color:#17804A}
+#root .miss{color:#C2362F}
+#root .acc{color:#2F5BD3}
+#root .pur{color:#7B3FC4}
+#root .card{background:#FFFFFF;border:4px solid #1F2A44;border-radius:28px;box-shadow:8px 8px 0 #1F2A44}
+#root .mark{background:linear-gradient(transparent 58%, #FFD54A 58%);padding:0 0.08em}
+#root .badge{display:inline-flex;align-items:center;justify-content:center;width:1.5em;height:1.5em;border-radius:50%;border:4px solid #1F2A44;font-weight:900;color:#FFFFFF;line-height:1}
+#root .hitb{background:#17804A}
+#root .missb{background:#C2362F}
+#root .chart{position:absolute;width:820px;height:600px}
+#root .chart .base{position:absolute;left:60px;right:20px;bottom:120px;height:5px;background:#1F2A44;border-radius:3px}
+#root .chart .bar{position:absolute;bottom:122px;width:110px;background:#1F2A44;border-radius:14px 14px 0 0}
+#root .chart .bar.k2{background:#2F5BD3}
+#root .chart .val{position:absolute;width:180px;text-align:center;font-size:32px;font-weight:900}
+#root .chart .kl{position:absolute;bottom:62px;width:180px;text-align:center;font-size:38px;font-weight:900}
+#root .chart .ax{position:absolute;bottom:4px;left:80px;width:720px;text-align:center;font-size:28px;font-weight:700;color:#3C465C}
+#root .chart .ay{position:absolute;top:0;left:60px;font-size:30px;font-weight:800;color:#3C465C}
+
+  </style>
+  <div id="root" data-composition-id="buchstaben" data-width="1920" data-height="1080">
+    <div id="buchstaben-wrap" class="abs" style="inset: 0">
+      <div id="buchstaben-h" class="h"><span class="step">2</span><span>Die Buchstaben</span></div>
+      <div id="bu-t0" class="abs card c" style="left:192px;top:225px;width:360px;height:450px;padding:22px 22px">
+        <div style="font-size:130px;line-height:1"><span class="v">n</span></div>
+        <div class="math" style="font-size:52px;margin-top:4px">= 3</div>
+        <div class="small" style="margin-top:14px">Anzahl der Versuche: Mia wirft 3-mal.</div>
+      </div>
+      <div id="bu-t1" class="abs card c" style="left:584px;top:225px;width:360px;height:450px;padding:22px 22px">
+        <div style="font-size:130px;line-height:1"><span class="v">k</span></div>
+        <div class="math" style="font-size:52px;margin-top:4px">= 2</div>
+        <div class="small" style="margin-top:14px">Anzahl der Treffer, nach der wir fragen.</div>
+      </div>
+      <div id="bu-t2" class="abs card c" style="left:976px;top:225px;width:360px;height:450px;padding:22px 22px">
+        <div style="font-size:130px;line-height:1"><span class="v">p</span></div>
+        <div class="math" style="font-size:52px;margin-top:4px">= 0,4</div>
+        <div class="small" style="margin-top:14px">Treffer-Wahrscheinlichkeit bei jedem einzelnen Wurf.</div>
+      </div>
+      <div id="bu-t3" class="abs card c" style="left:1368px;top:225px;width:360px;height:450px;padding:22px 22px">
+        <div style="font-size:130px;line-height:1"><span class="v">X</span></div>
+        <div class="math" style="font-size:52px;margin-top:4px">= ?</div>
+        <div class="small" style="margin-top:14px">Zufallsgröße: die Anzahl der Treffer. Vorher unbekannt: 0, 1, 2 oder 3.</div>
+      </div>
+      <div id="bu-px" class="abs card c" style="left:192px;top:715px;width:1536px;padding:22px 30px">
+        <div class="math" style="font-size:72px">P(<span class="v">X</span> = 2)</div>
+        <div class="t2" style="margin-top:6px">sprich: „die Wahrscheinlichkeit, dass <span class="v">X</span> genau 2 ist“ – also für <span class="mark">genau 2 Treffer</span></div>
+      </div>
+    </div>
+  </div>
+  <script>
+      const tl = gsap.timeline({ paused: true });
+      const blurIn = (sel, t, d = 0.45) =>
+        tl.fromTo(sel, { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: d, ease: "power3.out" }, t);
+      const rise = (sel, t, stagger = 0) =>
+        tl.fromTo(sel, { opacity: 0, y: 34, filter: "blur(6px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.6, ease: "expo.out", stagger }, t);
+      const pop = (sel, t, stagger = 0) =>
+        tl.fromTo(sel, { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.55, ease: "back.out(1.7)", stagger }, t);
+      const slideIn = (sel, t) =>
+        tl.fromTo(sel, { opacity: 0, x: -70, filter: "blur(8px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.65, ease: "expo.out" }, t);
+      const out = (sel, t) => tl.to(sel, { opacity: 0, filter: "blur(10px)", duration: 0.3, ease: "power2.in" }, t);
+      const glow = (sel, t, color) => tl.to(sel, { backgroundColor: color, duration: 0.35, ease: "power2.out" }, t);
+      slideIn("#buchstaben-h", 0.2);
+      rise("#bu-t0", 1.0);
+      rise("#bu-t1", 3.6);
+      rise("#bu-t2", 6.2);
+      rise("#bu-t3", 8.8);
+      pop("#bu-px", 12.6);
+      out("#buchstaben-wrap", 19.65);
+      tl.set({}, {}, 20);
+      window.__timelines["buchstaben"] = tl;
+  </script>
+</template>

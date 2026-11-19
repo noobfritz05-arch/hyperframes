@@ -1,0 +1,107 @@
+<template>
+  <style>
+#root{position:absolute;inset:0;font-family:"Nunito",sans-serif;color:#1F2A44;}
+#root .abs{position:absolute}
+#root .h{position:absolute;left:192px;top:104px;font-size:48px;font-weight:900;letter-spacing:-0.01em;display:flex;align-items:center;gap:20px}
+#root .step{display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;background:#1F2A44;color:#FFF7E8;border-radius:18px;font-size:38px}
+#root .t{font-size:42px;font-weight:800;line-height:1.25}
+#root .t2{font-size:34px;font-weight:700;line-height:1.3;color:#3C465C}
+#root .small{font-size:30px;font-weight:700;line-height:1.3;color:#3C465C}
+#root .c{text-align:center}
+#root .v{font-family:"EB Garamond",serif;font-style:italic;font-weight:600;font-size:1.12em;padding:0 0.03em}
+#root .math{font-weight:800;white-space:nowrap}
+#root .binom{display:inline-flex;align-items:center;vertical-align:middle}
+#root .binom .bp{font-size:2.05em;font-weight:300;line-height:1}
+#root .binom .bs{display:inline-flex;flex-direction:column;align-items:center;line-height:1.02;font-size:0.82em;margin:0 0.04em}
+#root .frac{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;margin:0 0.1em}
+#root .frac .num{padding:0 0.2em;line-height:1.15}
+#root .frac .den{border-top:0.07em solid currentColor;padding:0.05em 0.2em 0;line-height:1.15}
+#root .sqrt{display:inline-flex;align-items:flex-start;vertical-align:baseline}
+#root .sqrt .rs{font-weight:600}
+#root .sqrt .rc{border-top:0.07em solid currentColor;padding:0 0.12em;margin-top:0.12em;line-height:1.05}
+#root sup{font-size:0.6em;vertical-align:0.75em;line-height:0}
+#root .hit{color:#17804A}
+#root .miss{color:#C2362F}
+#root .acc{color:#2F5BD3}
+#root .pur{color:#7B3FC4}
+#root .card{background:#FFFFFF;border:4px solid #1F2A44;border-radius:28px;box-shadow:8px 8px 0 #1F2A44}
+#root .mark{background:linear-gradient(transparent 58%, #FFD54A 58%);padding:0 0.08em}
+#root .badge{display:inline-flex;align-items:center;justify-content:center;width:1.5em;height:1.5em;border-radius:50%;border:4px solid #1F2A44;font-weight:900;color:#FFFFFF;line-height:1}
+#root .hitb{background:#17804A}
+#root .missb{background:#C2362F}
+#root .chart{position:absolute;width:820px;height:600px}
+#root .chart .base{position:absolute;left:60px;right:20px;bottom:120px;height:5px;background:#1F2A44;border-radius:3px}
+#root .chart .bar{position:absolute;bottom:122px;width:110px;background:#1F2A44;border-radius:14px 14px 0 0}
+#root .chart .bar.k2{background:#2F5BD3}
+#root .chart .val{position:absolute;width:180px;text-align:center;font-size:32px;font-weight:900}
+#root .chart .kl{position:absolute;bottom:62px;width:180px;text-align:center;font-size:38px;font-weight:900}
+#root .chart .ax{position:absolute;bottom:4px;left:80px;width:720px;text-align:center;font-size:28px;font-weight:700;color:#3C465C}
+#root .chart .ay{position:absolute;top:0;left:60px;font-size:30px;font-weight:800;color:#3C465C}
+
+  </style>
+  <div id="root" data-composition-id="pfade" data-width="1920" data-height="1080">
+    <div id="pfade-wrap" class="abs" style="inset: 0">
+      <div id="pfade-h" class="h"><span class="step">3</span><span>Alle Wege zu genau 2 Treffern</span></div>
+      <div id="pf-w0" class="abs small c" style="left:330px;top:200px;width:118px">Wurf 1</div>
+      <div id="pf-w1" class="abs small c" style="left:450px;top:200px;width:118px">Wurf 2</div>
+      <div id="pf-w2" class="abs small c" style="left:570px;top:200px;width:118px">Wurf 3</div>
+      <div id="pf-lab0" class="abs t2" style="left:192px;top:262px">Weg 1</div>
+      <div id="pf-s00" class="abs" style="left:350px;top:245px;font-size:52px"><span class="badge hitb">✓</span></div>
+      <div id="pf-s01" class="abs" style="left:470px;top:245px;font-size:52px"><span class="badge hitb">✓</span></div>
+      <div id="pf-s02" class="abs" style="left:590px;top:245px;font-size:52px"><span class="badge missb">✗</span></div>
+      <div id="pf-p0" class="abs math" style="left:740px;top:255px;font-size:46px">0,4 · 0,4 · 0,6</div>
+      <div id="pf-r0" class="abs math acc" style="left:1090px;top:255px;font-size:46px">= 0,096</div>
+      <div id="pf-lab1" class="abs t2" style="left:192px;top:402px">Weg 2</div>
+      <div id="pf-s10" class="abs" style="left:350px;top:385px;font-size:52px"><span class="badge hitb">✓</span></div>
+      <div id="pf-s11" class="abs" style="left:470px;top:385px;font-size:52px"><span class="badge missb">✗</span></div>
+      <div id="pf-s12" class="abs" style="left:590px;top:385px;font-size:52px"><span class="badge hitb">✓</span></div>
+      <div id="pf-p1" class="abs math" style="left:740px;top:395px;font-size:46px">0,4 · 0,6 · 0,4</div>
+      <div id="pf-r1" class="abs math acc" style="left:1090px;top:395px;font-size:46px">= 0,096</div>
+      <div id="pf-lab2" class="abs t2" style="left:192px;top:542px">Weg 3</div>
+      <div id="pf-s20" class="abs" style="left:350px;top:525px;font-size:52px"><span class="badge missb">✗</span></div>
+      <div id="pf-s21" class="abs" style="left:470px;top:525px;font-size:52px"><span class="badge hitb">✓</span></div>
+      <div id="pf-s22" class="abs" style="left:590px;top:525px;font-size:52px"><span class="badge hitb">✓</span></div>
+      <div id="pf-p2" class="abs math" style="left:740px;top:535px;font-size:46px">0,6 · 0,4 · 0,4</div>
+      <div id="pf-r2" class="abs math acc" style="left:1090px;top:535px;font-size:46px">= 0,096</div>
+      <div id="pf-k1" class="abs card small" style="left:1340px;top:240px;width:390px;padding:20px 24px">Treffer, <b>und dann</b> Treffer, <b>und dann</b> daneben:<br />Bei „und dann“ wird <b>multipliziert</b>.</div>
+      <div id="pf-k2" class="abs card small" style="left:1340px;top:240px;width:390px;padding:20px 24px">Gleiche Zutaten, nur andere Reihenfolge – darum <b>gleich wahrscheinlich</b>.</div>
+      <div id="pf-lead" class="abs t2" style="left:192px;top:690px">Es gibt 3 Wege. Weg 1 <b>oder</b> Weg 2 <b>oder</b> Weg 3 – bei „oder“ wird <b>addiert</b>:</div>
+      <div id="pf-sum1" class="abs math" style="left:192px;top:760px;font-size:56px">P(<span class="v">X</span> = 2) = 0,096 + 0,096 + 0,096</div>
+      <div id="pf-sum2" class="abs math" style="left:192px;top:850px;font-size:56px">= 3 · 0,096 = <span class="mark">0,288 ≈ 28,8 %</span></div>
+    </div>
+  </div>
+  <script>
+      const tl = gsap.timeline({ paused: true });
+      const blurIn = (sel, t, d = 0.45) =>
+        tl.fromTo(sel, { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: d, ease: "power3.out" }, t);
+      const rise = (sel, t, stagger = 0) =>
+        tl.fromTo(sel, { opacity: 0, y: 34, filter: "blur(6px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.6, ease: "expo.out", stagger }, t);
+      const pop = (sel, t, stagger = 0) =>
+        tl.fromTo(sel, { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.55, ease: "back.out(1.7)", stagger }, t);
+      const slideIn = (sel, t) =>
+        tl.fromTo(sel, { opacity: 0, x: -70, filter: "blur(8px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.65, ease: "expo.out" }, t);
+      const out = (sel, t) => tl.to(sel, { opacity: 0, filter: "blur(10px)", duration: 0.3, ease: "power2.in" }, t);
+      const glow = (sel, t, color) => tl.to(sel, { backgroundColor: color, duration: 0.35, ease: "power2.out" }, t);
+      slideIn("#pfade-h", 0.2);
+      blurIn(["#pf-w0", "#pf-w1", "#pf-w2"], 0.8);
+      blurIn("#pf-lab0", 1.0);
+      pop(["#pf-s00", "#pf-s01", "#pf-s02"], 1.1, 0.4);
+      rise("#pf-p0", 2.8);
+      pop("#pf-k1", 3.6);
+      pop("#pf-r0", 6.6);
+      blurIn("#pf-lab1", 8.6);
+      pop(["#pf-s10", "#pf-s11", "#pf-s12"], 8.6, 0.25);
+      rise(["#pf-p1", "#pf-r1"], 9.6, 0.3);
+      blurIn("#pf-lab2", 10.8);
+      pop(["#pf-s20", "#pf-s21", "#pf-s22"], 10.8, 0.25);
+      rise(["#pf-p2", "#pf-r2"], 11.8, 0.3);
+      out("#pf-k1", 12.7);
+      pop("#pf-k2", 13.0);
+      blurIn("#pf-lead", 15.8);
+      rise("#pf-sum1", 17.4);
+      rise("#pf-sum2", 19.2);
+      out("#pfade-wrap", 24.65);
+      tl.set({}, {}, 25);
+      window.__timelines["pfade"] = tl;
+  </script>
+</template>

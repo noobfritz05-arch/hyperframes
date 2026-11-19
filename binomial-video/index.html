@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      :root {
+        --ground: #fff7e8;
+        --ink: #1f2a44;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: var(--ground);
+      }
+      #root {
+        width: 100%;
+        height: 100%;
+        background: var(--ground);
+      }
+      #paper {
+        position: absolute;
+        inset: 0;
+        background-color: var(--ground);
+        background-image:
+          linear-gradient(rgba(31, 42, 68, 0.06) 2px, transparent 2px),
+          linear-gradient(90deg, rgba(31, 42, 68, 0.06) 2px, transparent 2px);
+        background-size: 48px 48px;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="232"
+      data-width="1920"
+      data-height="1080"
+    >
+      <div id="paper"></div>
+      <div
+        id="intro"
+        data-composition-id="intro"
+        data-composition-src="compositions/intro.html"
+        data-start="0"
+        data-duration="12"
+        data-track-index="1"
+        data-track-kind="graphics"
+        data-width="1920"
+        data-height="1080"
+      ></div>
+      <div
+        id="wurf"
+        data-composition-id="wurf"
+        data-composition-src="compositions/wurf.html"
+        data-start="12"
+        data-duration="20"
+        data-track-index="1"
+        data-track-kind="graphics"
+        data-width="1920"
+        data-height="1080"
+      ></div>
+      <div
+        id="buchstaben"
+        data-composition-id="buchstaben"
+        data-composition-src="compositions/buchstaben.html"
+        data-start="32"
+        data-duration="20"
+        data-track-index="1"
+        data-track-kind="graphics"
+        data-width="1920"
+        data-height="1080"
+      ></div>
+      <div
+        id="pfade"
+        data-composition-id="pfade"
+        data-composition-src="compositions/pfade.html"
+        data-start="52"
+        data-duration="25"
+        data-track-index="1"
+        data-track-kind="graphics"
+        data-width="1920"
+        data-height="1080"
+      ></div>
+      <div
+        id="formel"
+        data-composition-id="formel"
+        data-composition-src="compositions/formel.html"
+        data-start="77"
+        data-duration="16"
+        data-track-index="1"
+        data-track-kind="graphics"
+        data-width="1920"
+        data-height="1080"
+      ></div>
+      <div
+        id="rechnen"
+        data-composition-id="rechnen"
+        data-composition-src="compositions/rechnen.html"
+        data-start="93"
+        data-duration="23"
+        data-track-index="1"
+        data-track-kind="graphics"
+        data-width="1920"
+        data-height="1080"
+      ></div>
+      <div
+        id="verteilung"
+        data-composition-id="verteilung"
+        data-composition-src="compositions/verteilung.html"
+        data-start="116"
+        data-duration="20"
+        data-track-index="1"
+        data-track-kind="graphics"
+        data-width="1920"
+        data-height="1080"
+      ></div>
+      <div
+        id="erwartung"
+        data-composition-id="erwartung"
+        data-composition-src="compositions/erwartung.html"
+        data-start="136"
+        data-duration="27"
+        data-track-index="1"
+        data-track-kind="graphics"
+        data-width="1920"
+        data-height="1080"
+      ></div>
+      <div
+        id="varianz"
+        data-composition-id="varianz"
+        data-composition-src="compositions/varianz.html"
+        data-start="163"
+        data-duration="31"
+        data-track-index="1"
+        data-track-kind="graphics"
+        data-width="1920"
+        data-height="1080"
+      ></div>
+      <div
+        id="sigma"
+        data-composition-id="sigma"
+        data-composition-src="compositions/sigma.html"
+        data-start="194"
+        data-duration="23"
+        data-track-index="1"
+        data-track-kind="graphics"
+        data-width="1920"
+        data-height="1080"
+      ></div>
+      <div
+        id="ende"
+        data-composition-id="ende"
+        data-composition-src="compositions/ende.html"
+        data-start="217"
+        data-duration="15"
+        data-track-index="1"
+        data-track-kind="graphics"
+        data-width="1920"
+        data-height="1080"
+      ></div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,94 @@
+<template>
+  <style>
+#root{position:absolute;inset:0;font-family:"Nunito",sans-serif;color:#1F2A44;}
+#root .abs{position:absolute}
+#root .h{position:absolute;left:192px;top:104px;font-size:48px;font-weight:900;letter-spacing:-0.01em;display:flex;align-items:center;gap:20px}
+#root .step{display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;background:#1F2A44;color:#FFF7E8;border-radius:18px;font-size:38px}
+#root .t{font-size:42px;font-weight:800;line-height:1.25}
+#root .t2{font-size:34px;font-weight:700;line-height:1.3;color:#3C465C}
+#root .small{font-size:30px;font-weight:700;line-height:1.3;color:#3C465C}
+#root .c{text-align:center}
+#root .v{font-family:"EB Garamond",serif;font-style:italic;font-weight:600;font-size:1.12em;padding:0 0.03em}
+#root .math{font-weight:800;white-space:nowrap}
+#root .binom{display:inline-flex;align-items:center;vertical-align:middle}
+#root .binom .bp{font-size:2.05em;font-weight:300;line-height:1}
+#root .binom .bs{display:inline-flex;flex-direction:column;align-items:center;line-height:1.02;font-size:0.82em;margin:0 0.04em}
+#root .frac{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;margin:0 0.1em}
+#root .frac .num{padding:0 0.2em;line-height:1.15}
+#root .frac .den{border-top:0.07em solid currentColor;padding:0.05em 0.2em 0;line-height:1.15}
+#root .sqrt{display:inline-flex;align-items:flex-start;vertical-align:baseline}
+#root .sqrt .rs{font-weight:600}
+#root .sqrt .rc{border-top:0.07em solid currentColor;padding:0 0.12em;margin-top:0.12em;line-height:1.05}
+#root sup{font-size:0.6em;vertical-align:0.75em;line-height:0}
+#root .hit{color:#17804A}
+#root .miss{color:#C2362F}
+#root .acc{color:#2F5BD3}
+#root .pur{color:#7B3FC4}
+#root .card{background:#FFFFFF;border:4px solid #1F2A44;border-radius:28px;box-shadow:8px 8px 0 #1F2A44}
+#root .mark{background:linear-gradient(transparent 58%, #FFD54A 58%);padding:0 0.08em}
+#root .badge{display:inline-flex;align-items:center;justify-content:center;width:1.5em;height:1.5em;border-radius:50%;border:4px solid #1F2A44;font-weight:900;color:#FFFFFF;line-height:1}
+#root .hitb{background:#17804A}
+#root .missb{background:#C2362F}
+#root .chart{position:absolute;width:820px;height:600px}
+#root .chart .base{position:absolute;left:60px;right:20px;bottom:120px;height:5px;background:#1F2A44;border-radius:3px}
+#root .chart .bar{position:absolute;bottom:122px;width:110px;background:#1F2A44;border-radius:14px 14px 0 0}
+#root .chart .bar.k2{background:#2F5BD3}
+#root .chart .val{position:absolute;width:180px;text-align:center;font-size:32px;font-weight:900}
+#root .chart .kl{position:absolute;bottom:62px;width:180px;text-align:center;font-size:38px;font-weight:900}
+#root .chart .ax{position:absolute;bottom:4px;left:80px;width:720px;text-align:center;font-size:28px;font-weight:700;color:#3C465C}
+#root .chart .ay{position:absolute;top:0;left:60px;font-size:30px;font-weight:800;color:#3C465C}
+
+  </style>
+  <div id="root" data-composition-id="intro" data-width="1920" data-height="1080">
+    <div id="intro-wrap" class="abs" style="inset: 0">
+      <svg id="intro-bin" class="abs" style="left:1450px;top:640px;z-index:3" width="220" height="250" viewBox="0 0 220 250">
+        <path d="M24 44 L196 44 L176 238 L44 238 Z" fill="#FFFFFF" stroke="#1F2A44" stroke-width="8" stroke-linejoin="round" />
+        <path d="M78 84 L86 206 M110 84 L110 206 M142 84 L134 206" stroke="#1F2A44" stroke-width="6" stroke-linecap="round" opacity="0.3" />
+        <rect x="8" y="28" width="204" height="26" rx="12" fill="#2F5BD3" stroke="#1F2A44" stroke-width="8" />
+      </svg>
+      <div id="intro-ball" class="abs" style="left:1525px;top:700px;width:70px;height:70px;z-index:2">
+        <svg width="70" height="70" viewBox="0 0 70 70"><circle cx="35" cy="35" r="30" fill="#FFFFFF" stroke="#1F2A44" stroke-width="6" /><path d="M16 30 L30 24 L38 36 L52 30 M22 46 L36 42 L46 52" fill="none" stroke="#1F2A44" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.45" /></svg>
+      </div>
+      <div id="intro-hit" class="abs card t hit" style="left:1440px;top:556px;padding:10px 26px;z-index:4">✓ Treffer!</div>
+      <div id="intro-kicker" class="abs t2" style="left:192px;top:330px">Mathe – spielerisch erklärt</div>
+      <div id="intro-title" class="abs" style="left:186px;top:390px;font-size:124px;font-weight:900;letter-spacing:-0.03em;line-height:1">Die Binomial&shy;verteilung</div>
+      <div id="intro-sub" class="abs t2" style="left:192px;top:540px">mit Formel, Erwartungswert, Varianz und Abweichung</div>
+      <div id="intro-l1" class="abs t" style="left:192px;top:300px">Mia spielt Papierkorb-Basketball.</div>
+      <div id="intro-l2" class="abs t" style="left:192px;top:380px">Von 10 Würfen trifft sie im Schnitt 4.</div>
+      <div id="intro-l3" class="abs t" style="left:192px;top:460px">Jetzt wirft sie 3-mal.</div>
+      <div id="intro-l4" class="abs" style="left:192px;top:580px;width:1180px;font-size:68px;font-weight:900;line-height:1.15">Wie wahrscheinlich sind <span class="mark">genau 2 Treffer</span>?</div>
+    </div>
+  </div>
+  <script>
+      const tl = gsap.timeline({ paused: true });
+      const blurIn = (sel, t, d = 0.45) =>
+        tl.fromTo(sel, { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: d, ease: "power3.out" }, t);
+      const rise = (sel, t, stagger = 0) =>
+        tl.fromTo(sel, { opacity: 0, y: 34, filter: "blur(6px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.6, ease: "expo.out", stagger }, t);
+      const pop = (sel, t, stagger = 0) =>
+        tl.fromTo(sel, { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.55, ease: "back.out(1.7)", stagger }, t);
+      const slideIn = (sel, t) =>
+        tl.fromTo(sel, { opacity: 0, x: -70, filter: "blur(8px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.65, ease: "expo.out" }, t);
+      const out = (sel, t) => tl.to(sel, { opacity: 0, filter: "blur(10px)", duration: 0.3, ease: "power2.in" }, t);
+      const glow = (sel, t, color) => tl.to(sel, { backgroundColor: color, duration: 0.35, ease: "power2.out" }, t);
+      // the throw: x linear, y up then down, then it drops into the bin
+      tl.fromTo("#intro-ball", { x: -1250, y: 120, rotation: 0 }, { x: 0, rotation: 540, duration: 1.2, ease: "none" }, 0.2);
+      tl.to("#intro-ball", { y: -400, duration: 0.6, ease: "power2.out" }, 0.2);
+      tl.to("#intro-ball", { y: 0, duration: 0.6, ease: "power2.in" }, 0.8);
+      tl.to("#intro-ball", { y: 110, duration: 0.25, ease: "power2.in" }, 1.4);
+      tl.fromTo("#intro-bin", { rotation: 0 }, { rotation: -4, duration: 0.08, ease: "power2.out", transformOrigin: "50% 100%" }, 1.45);
+      tl.to("#intro-bin", { rotation: 0, duration: 0.5, ease: "elastic.out(1, 0.4)" }, 1.53);
+      pop("#intro-hit", 1.5);
+      blurIn("#intro-kicker", 0.5);
+      rise("#intro-title", 0.8);
+      blurIn("#intro-sub", 1.6);
+      out(["#intro-kicker", "#intro-title", "#intro-sub", "#intro-hit"], 4.0);
+      rise("#intro-l1", 4.4);
+      rise("#intro-l2", 5.8);
+      rise("#intro-l3", 7.3);
+      blurIn("#intro-l4", 8.5, 0.5);
+      out("#intro-wrap", 11.65);
+      tl.set({}, {}, 12);
+      window.__timelines["intro"] = tl;
+  </script>
+</template>
